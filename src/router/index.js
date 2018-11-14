@@ -130,7 +130,27 @@ export const constantRouterMap = [
 
   { path: '*', redirect: '/404', hidden: true },
 
-
+  {
+    path: '/house',
+    component: Layout,
+    redirect: '/house',
+    name: 'consult',
+    meta: {
+      title: '房源管理',
+      icon: 'nested'
+    },
+    children: [
+      {
+        path: '/house/newhouse',
+        component: () => import('@/views/house/newhouse'), // Parent router-view
+        name: 'Menu1',
+        meta: { title: '新房管理' },
+        children:[
+          
+        ]
+      }
+    ]
+  },
   {
     path: '/consult',
     component: Layout,
@@ -154,6 +174,31 @@ export const constantRouterMap = [
         path: '/consulelist',
         component: () => import('@/views/consulting/consultlist'),
         meta: { title: '咨询分类' }
+      }
+    ]
+  },
+
+  {
+    path: '/system',
+    component: Layout,
+    redirect: '/system',
+    name: 'system',
+    meta: {
+      title: '系统管理',
+      icon: 'nested'
+    },
+    children: [
+      {
+        path: '/system/banner',
+        component: () => import('@/views/system/banner'), // Parent router-view
+        name: 'Menu1',
+        meta: { title: '轮播管理' },
+      },
+      {
+        path: '/system/flowerdata',
+        component: () => import('@/views/system/flowerdata'), // Parent router-view
+        name: 'Menu1',
+        meta: { title: '楼花数据' },
       }
     ]
   },
