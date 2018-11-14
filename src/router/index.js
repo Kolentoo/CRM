@@ -60,19 +60,6 @@ export const constantRouterMap = [
   },
 
   {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },
-
-  {
     path: '/nested',
     component: Layout,
     redirect: '/nested/menu1',
@@ -130,18 +117,61 @@ export const constantRouterMap = [
     ]
   },
 
+  // {
+  //   path: 'external-link',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+  //       meta: { title: 'External Link', icon: 'link' }
+  //     }
+  //   ]
+  // },
+
+  { path: '*', redirect: '/404', hidden: true },
+
+
   {
-    path: 'external-link',
+    path: '/consult',
     component: Layout,
+    redirect: '/consult/consultmanage',
+    name: 'consult',
+    meta: {
+      title: '咨询管理',
+      icon: 'nested'
+    },
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: '/consultmanage',
+        component: () => import('@/views/consulting/consultmanage'), // Parent router-view
+        name: 'Menu1',
+        meta: { title: '咨询列表' },
+        children:[
+          
+        ]
+      },
+      {
+        path: '/consulelist',
+        component: () => import('@/views/consulting/consultlist'),
+        meta: { title: '咨询分类' }
       }
     ]
   },
 
-  { path: '*', redirect: '/404', hidden: true }
+  {
+    path: '/article',
+    component: Layout,
+    children: [
+      {
+        path: '/article',
+        name: 'article',
+        component: () => import('@/views/article/article'),
+        // meta: { title: '创建文章', icon: 'link' }
+      }
+    ]
+  },
+
+  
 ]
 
 export default new Router({
