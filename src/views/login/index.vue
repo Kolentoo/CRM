@@ -71,12 +71,12 @@ export default {
     }
   },
   watch: {
-    $route: {
-      handler: function(route) {
-        this.redirect = route.query && route.query.redirect
-      },
-      immediate: true
-    }
+    // $route: {
+    //   handler: function(route) {
+    //     this.redirect = route.query && route.query.redirect
+    //   },
+    //   immediate: true
+    // }
   },
   methods: {
     showPwd() {
@@ -87,6 +87,7 @@ export default {
       }
     },
     handleLogin() {
+      
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true

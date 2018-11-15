@@ -5,16 +5,16 @@
         <el-form ref="form" :model="form" label-width="80px">
 
         <el-form-item label="标题">
-            <el-input v-model="form.name" placeholder="标题"></el-input>
+            <el-input size="small" v-model="form.name" placeholder="标题"></el-input>
         </el-form-item>
         <el-form-item label="审批人">
-            <el-input v-model="form.user" placeholder="审批人"></el-input>
+            <el-input size="small" v-model="form.user" placeholder="审批人"></el-input>
         </el-form-item>
 
         <el-row type="flex" class="row-bg allinput" justify="space-around">
             <el-col :span="8">            
                 <el-form-item label="状态">
-                    <el-select v-model="selectone" placeholder="请选择">
+                    <el-select size="small" v-model="selectone" placeholder="请选择">
                         <el-option v-for="(item,index) in selectbox1" :key="index" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
@@ -22,7 +22,7 @@
             </el-col>
             <el-col :span="8">            
                 <el-form-item label="类别">
-                    <el-select v-model="selecttwo" placeholder="请选择">
+                    <el-select size="small" v-model="selecttwo" placeholder="请选择">
                         <el-option v-for="(item,index) in selectbox2" :key="index" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
@@ -30,7 +30,7 @@
             </el-col>            
             <el-col :span="8">            
                 <el-form-item label="属性">
-                    <el-select v-model="selectthree" placeholder="请选择">
+                    <el-select size="small" v-model="selectthree" placeholder="请选择">
                         <el-option v-for="(item,index) in selectbox3" :key="index" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
@@ -41,24 +41,24 @@
         <el-row type="flex" class="row-bg allinput" justify="space-around">
             <el-col :span="8">            
                 <el-form-item label="点击量">
-                    <el-input v-model="form.read" placeholder=""></el-input>
+                    <el-input size="small" v-model="form.read" placeholder=""></el-input>
                 </el-form-item>
             </el-col>
             <el-col :span="8">            
                 <el-form-item label="来源">
-                    <el-input v-model="form.source" placeholder=""></el-input>
+                    <el-input size="small" v-model="form.source" placeholder=""></el-input>
                 </el-form-item>
             </el-col>          
             <el-col :span="8">            
                 <el-form-item label="标签名">
-                    <el-input v-model="form.tag" placeholder=""></el-input>
+                    <el-input size="small" v-model="form.tag" placeholder=""></el-input>
                 </el-form-item>
             </el-col>
         </el-row>
 
         <el-form-item label="创建时间">
             <el-col>
-                <el-date-picker type="date" placeholder="选择日期" v-model="form.datetime" style="width: 100%;"></el-date-picker>
+                <el-date-picker size="small" type="date" placeholder="选择日期" v-model="form.datetime" style="width: 100%;"></el-date-picker>
             </el-col>
         </el-form-item>
         <el-form-item label="其他复选">
@@ -76,7 +76,7 @@
             </el-radio-group>
         </el-form-item>
         <el-form-item label="活动形式">
-            <el-input type="textarea" v-model="form.desc"></el-input>
+            <el-input size="small" type="textarea" v-model="form.desc"></el-input>
         </el-form-item>
 
         <el-form-item label="上传图片">
@@ -98,8 +98,8 @@
         </div>
 
         <el-form-item class="btn-group">
-            <el-button type="primary" @click="onSubmit">立即创建</el-button>
-            <el-button>取消</el-button>
+            <el-button size="small" type="primary" @click="onSubmit">立即创建</el-button>
+            <el-button size="small">取消</el-button>
         </el-form-item>
 
 
